@@ -6,5 +6,7 @@ import cycle from "./cycle.jpg";
 import surf from "./surf.jpg";
 import speaker from "./speaker.jpg";
 import airbnb from "./airbnb.png";
-
-export { logo, ps, drill, spanner, cycle, surf ,speaker};
+import emptycart from "./emptycart.png"
+import lesseeempty from "./lesseempty.png"
+import loading from "./loading.gif"
+export { logo, ps, drill, spanner, cycle, surf ,speaker,emptycart,lesseeempty,loading };

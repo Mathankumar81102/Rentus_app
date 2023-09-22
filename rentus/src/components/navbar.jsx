@@ -12,7 +12,7 @@ const navbar = () => {
 
 
   const logouthandle=()=>{
-    const value=confirm("Are You Sure to get this Product ?"); 
+    const value=confirm("Are You Sure to Logout ?"); 
     if(value==true){
   localStorage.removeItem("user");
   navigate("/")
@@ -33,13 +33,13 @@ const navbar = () => {
      
       
       {/* <div className="flex  flex-row space-x-1.5  "> */}
-        <div className="bg-sky-200 flex sm:col-start-4 col-start-3 sm:text-base xs:w-auto xs:text-base text-sm  justify-start space-x-2 items-center rounded-xl mx-auto px-5 py-1 text-stone-900">
+        <div className="bg-sky-200 flex sm:col-start-4 col-start-3 sm:text-base xs:w-auto xs:text-base text-sm  justify-start space-x-2 items-center rounded-xl mx-auto sm:px-5 px-2 py-1 text-stone-900">
         <div>{<BsFillPersonFill size={25} className="xs:w-auto w-4"/>}</div>
         <div>{localStorage.getItem("user")}</div>
         </div>
        
         <button onClick={logouthandle}
-          className=" bg-black col-start-5 text-white px-4 hidden relative xs:mx-auto    py-2 sm:flex rounded-full"
+          className=" bg-black sm:col-start-5 text-white px-4 sm:gap-3 relative xs:mx-auto  col-start-5  py-2 flex  rounded-full"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +47,7 @@ const navbar = () => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6"
+            className="w-6 h-6 sm:block hidden"
           >
             <path
               strokeLinecap="round"
@@ -57,7 +57,8 @@ const navbar = () => {
           </svg>
           LogOut
         </button>
-        <div onClick={handleNav} className="sm:hidden mx-auto col-start-5">
+        
+        {/* <div onClick={handleNav} className="sm:hidden mx-auto col-start-5">
           {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={30} />}
         </div>
         <div
@@ -73,7 +74,7 @@ const navbar = () => {
             <li className="p-4 border-b border-black-600"> Your Payements</li>
             <li className="p-4 border-b border-black-600">about us</li>
           </ul>
-        </div>
+        </div> */}
       {/* </div> */}
     </nav>
   );

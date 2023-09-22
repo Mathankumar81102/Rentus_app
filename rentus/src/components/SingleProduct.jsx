@@ -1,17 +1,33 @@
 import React from 'react'
 import { Navbar, Hero, Footer } from "../components";
 import { logo, ps, drill, spanner, cycle, surf } from "../assets/index"
-import { useLocation } from 'react-router-dom'
+import { useLocation,useNavigate } from 'react-router-dom'
 import {useParams} from "react-router-dom";
 import styles from "../style";
-
+import Axios from 'axios';
 
 function SingleProduct(props) {
 const {param}=useParams()
 //can access data which is sent through <link>
 const location = useLocation()
-  const { data} = location?.state
-  
+  const { data } = location?.state
+  const navigate=useNavigate()
+  async function handleClick(e){
+    e.preventDefault();
+    const value=confirm("Are You Sure to get this Product ?"); 
+    console.log(value);
+  const date = new Date()
+  const day = date.getDate();
+  const month = date.getMonth()+1;
+  const year = date.getFullYear();
+  const fullDate =  `${year}-${month}-${day}`;
+  if(value==true){
+    navigate("/Home/Lessee/")
+      await Axios.post ("http://localhost:3001/setStatus",{byer:localStorage.getItem("user"),product:data?.name,seller:data?.user,rentDate:fullDate}).then((response)=>{
+      
+    })
+    }
+  }
 
   return (
     <div>
@@ -22,19 +38,22 @@ const location = useLocation()
           </div>
         </div>
       </div>
-      <div  className="bg-violet-200 overflow-clip  px-6 py-2   grid  h-full mt-10 mx-4 grid-cols-1 sm:grid-cols-1   grid-rows-2 md:grid-cols-1">
-      <div className='flex  justify-center scale-75'><img className='m-auto h-80 w-90 flex justify-center row-start-2 border-2 bg rounded-3xl ' src={data.image}></img></div>
-      <div className='bg-white mx-auto rounded-3xl px-11 flex flex-row  items-center justify-center row-span-2 row-start-2'>
+      <div  className="bg-violet-200 overflow-clip  px-6 py-2   grid  h-full mt-10 mx-4 grid-cols-1 sm:grid-cols-1   grid-rows-1 md:grid-cols-1  ">
+      <div className='flex flex-col my-8 py-11 rounded-lg bg-amber-100 mx-auto px-28'>
 
-<div><h2 className='ml-2 text-slate-500'>  <span className='font-bold text-black'> Owner Name: </span> {data.user} </h2>
+      <div className='flex  justify-center scale-75'><img className='m-auto  h-80 w-90 flex justify-center row-start-2 border-4 border-slate-700 shadow-2xl rounded-3xl ' src={data.image}></img></div>
+      <div className='bg-white border-2 shadow-2xl mx-auto rounded-3xl px-11 flex flex-row  items-center justify-center row-span-2 row-start-2'>
+
+<div className='flex flex-col py-8 px-20'><h2 className='ml-2 text-slate-500'>  <span className='font-bold text-black'> Owner Name: </span> {data.user} </h2>
     <h2 className=' ml-2 '> <span className='font-bold text-black'>₹ Price: </span> {data.price}</h2>
     <h2 className='ml-2 text-slate-500'> <span className='font-bold text-black'>Product Name: </span> {data.name} </h2>
     <h2 className='ml-2 text-slate-500'><span className='font-bold text-black'>Available From </span> {data.startDate} </h2>
     <h2 className='ml-2 text-slate-500'> <span className='font-bold text-black'>Available Until : </span>{data.endDate} </h2>
     <h2 className='ml-2 text-slate-500'> <span className='font-bold text-black'>Address: </span>{data.address} </h2>
     <h2 className='ml-2 text-slate-500'>  <span className='font-bold text-black'>Description: </span>{data.description} </h2>
-    <button className=' cursor-progress hover:animate-pulse flex mx-auto mt-7 hover:font-bold hover:border-black py-2 px-2'>Rent Now</button>
+    <button className=' flex mx-auto mt-7 hover:font-bold hover:border-black py-2 px-2' onClick={handleClick}>Rent Now</button>
    </div>
+      </div>
       
       </div>
      

@@ -25,8 +25,8 @@ const App = () => {
         </div>
       </div>
 
-      <div className={` ${styles.paddingX} ${styles.flexCenter}`}>
-        <div className={`${styles.boxWidth}`}>
+      <div className="">
+        <div className="xl:w-max-[1280px] overflow-clip w-full sm:w-max-[1060px] md:w-max-[1200px] ss-w-max-[768px]">
           <Footer />
         </div>
       </div>

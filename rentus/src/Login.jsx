@@ -60,21 +60,21 @@ const Login =() => {
 
     //   @ # $ % ^ & *
     return (
-    <div className ="relative h-96  w-full bg-green-300 md:grid md:grid-cols-2 grid grid-rows-2 md:grid-rows-none md:justify-center flow justify-center items-center  min-h-screen overflow-hidden">
+    <div className ="relative h-96  w-full login-bg md:grid md:grid-cols-2 grid grid-rows-2 md:grid-rows-none md:justify-center flow justify-center items-center  min-h-screen overflow-hidden">
         {/*logo*/}
     <div className='flex justify-center  sm:justify-center mb-16 md:mb-0 sm:items-center relative  items-center'>
     <div className=' flow justify-center items-center'>
         <img src={logo} alt="logo" className='  w-72'/>
-        <h1 className=' text-4xl font-bold '>Happy <span className='text-white'>RENT</span>ing :)</h1>
+        <h1 className=' text-4xl font-bold text-slate-600 '>Happy <span className='text-cyan-400'>RENT</span>ing :)</h1>
     </div>
     </div>
     {/*login form*/}
-    <div className={" px-16 py-10 mx-9 md:px-10 md:py-12  lg:py-16 mb-28 sm:mb-28 md:mb-0 md:scale-110 lg:w-auto  bg-white rounded-md shadow-2xl  md:max-w-md ss:max-w-ss lg:max-w-lg"}>
+    <div className={" px-16 py-10 mx-9 md:px-10 md:py-12  lg:py-20 mb-28 sm:mb-28 md:mb-0 md:scale-110   bg-white rounded-md shadow-2xl  md:max-w-sm ss:max-w-sm lg:max-w-md"}>
        <div className='grid grid-cols-3 sm:space-x-5 space-x-7  '>
-       <h1 className="sm:text-3xl  sm:col-span-2 text-xl col-span-1   font-semibold text-center text-purple-700 underline">
+       <h1 className="sm:text-4xl  sm:col-span-2 text-xl col-span-1   font-semibold text-center text-purple-700 underline">
             {login?"Login":"Register"}        
     </h1>
-    <button onClick={()=>{setLogin(!login)}} className='text-purple-700 sm:col-start-3 col-start-2 col-end-4 sm:scale-100 scale-75 font-bold hover:scale-y-110 hover:scale-x-110 hover:border-2  sm:text-xl w-full   hover:bg-violet-700 hover:text-white'>{!login?"Login":"Register"}
+    <button onClick={()=>{setLogin(!login)}} className='text-purple-700 sm:col-start-3 col-start-2 col-end-4 sm:scale-105 scale-75 font-bold hover:scale-y-110 hover:scale-x-110 hover:border-2 md:text-center md:text-xl w-full   hover:bg-violet-700 hover:text-white'>{!login?"Login":"Register"}
     </button>
     
     </div> 
@@ -111,9 +111,9 @@ const Login =() => {
                 />
             </div>
             
-            <div className="mt-6">
+            <div className="mt-6 flex justify-center items-center">
                 {/* <Link to="/app"> */}
-                    <button  className="w-full px-4 py-3 font-bold text-2xl  mt-4 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-500 focus:outline-none focus:bg-purple-600" onClick={handleClick} >
+                    <button  className="shadow-2xl tracking-wide px-4 py-2 font-bold text-2xl  mt-4  text-zinc-50  bg-purple-400 rounded-md hover:bg-purple-700 focus:outline-none border-none  " onClick={handleClick} >
                     {login?"Login":"Register"}
                     </button>
                 {/* </Link> */}

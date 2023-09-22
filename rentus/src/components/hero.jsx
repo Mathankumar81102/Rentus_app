@@ -6,7 +6,6 @@ import Lessee from "./Lessee";
 
 import { BrowserRouter, Routes, Route, Link, Outlet } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import Typed from "react-typed";
 
 const hero = (props) => {
   const name=props?.username;
@@ -19,22 +18,23 @@ const hero = (props) => {
         <NavLink
           to={{pathname:"/Home/product",state:{username:name}}}
 
-          className="rounded-sm hover:rounded-3xl hover:bg-sky-400  p-4 text-xl font-bold bg-sky-200 "
+          className="rounded-sm hover:rounded-3xl shadow-2xl shadow-sky-100 hover:bg-sky-400  p-4 text-xl font-bold bg-sky-200 "
         >
           
           PRODUCTS
         </NavLink>
         <NavLink
           to={{pathname:"/Home/lessor",state:{username:name}}}
-          className=" hover:bg-lime-400 hover:rounded-3xl bg-lime-200 p-4 text-xl font-bold"
+          className=" hover:bg-lime-400 hover:rounded-3xl bg-lime-200 shadow-2xl p-4 text-xl font-bold"
         >
-          LESSOR
+          <abbr className="no-underline" title="Your Products Given For Rent">LESSOR</abbr>
         </NavLink>
         <NavLink
           to={{pathname:"/Home/lessee",state:{username:name}}}
-          className=" hover:bg-rose-400 hover:rounded-3xl bg-rose-200 p-4 text-xl font-bold"
+          className=" hover:bg-rose-400 hover:rounded-3xl bg-rose-200 shadow-2xl p-4 text-xl font-bold"
         >
-          LESSEE
+        <abbr className="no-underline" title="Your Borrowed Products For Rent">LESSEE </abbr>
+
         </NavLink>
       </div>
       <div>

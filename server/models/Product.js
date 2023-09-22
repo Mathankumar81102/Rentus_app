@@ -19,19 +19,5 @@ image:String}
 
 const Product=mongoose.model("Product",productSchema);
 
-// //UserSchema
-// const userSchema=mongoose.Schema({
-//     username:{
-//     type:String,
-//     required:true
-//     },
-//     password:{
-//         type:String,
-//         required:true
-//         },
-//     product:{type: mongoose.Schema.Types.ObjectId, ref: 'Product'}
-    
-//     })
-//     const User=mongoose.model("user",userSchema);
-//     module.exports = User;
+
 module.exports=Product;

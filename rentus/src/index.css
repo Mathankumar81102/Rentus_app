@@ -143,3 +143,19 @@
   background: rgba(255, 255, 255, 0.6);
   filter: blur(750px);
 }
+
+.login-bg{
+background-image: url(./assets/login2.jpg);
+}
+
+.font_1{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.font_2{
+  font-family: 'Barlow', sans-serif;
+}
+
+.font_3{
+  font-family: 'Libre Franklin', sans-serif;
+}

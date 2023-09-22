@@ -1,20 +1,17 @@
 const express = require("express");
 const mongoose=require("mongoose");
-const app=express();
 const Product =require("./models/Product")
 const UserModel=require("./models/User")
 const cors=require("cors");
 const bodyParser = require('body-parser')
-const cookieParser =require("cookie-parser")
 const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken")
-var ls = require('local-storage');
 
+
+const app=express();
 
 const asyncHandler=require("express-async-handler");
 const { findOneAndUpdate } = require("./models/Product");
 
-app.use(cookieParser());
 app.use(express.json({limit: "50mb",extended:true}))
 app.use(express.urlencoded({limit: "50mb",extended:true}))
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -27,11 +24,8 @@ try{
 catch(err){
 console.log(err,"Mongo Db not connected")}
 
-//middleware
 
 
-
-//middleware
 
 
  
@@ -66,6 +60,7 @@ UserModel.findOne({username:username}, function (err, user) {
 
 })
 });
+
 app.post("/register",asyncHandler(async(req,res)=>{
   const username=req.body.username;
   const email=req.body.email;
